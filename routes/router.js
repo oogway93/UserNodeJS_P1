@@ -1,11 +1,11 @@
 const url = require("url");
 
-const usersRoute = require("./users/usersRoute");
+const usersRoute = require("./users/userRoute");
 
 const initRouter = (req, res) => {
     const path = url.parse(req.url, true).pathname
 
-    if (path === "/api/users" || path.endsWith("/api/users")) {
+    if (path === "/api/users/" || path.endsWith("/api/users")) {
         usersRoute(req, res)
     } else {
         res.setHeader("Content-Type", "application/json")
